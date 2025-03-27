@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import wasakLogo from '/member/profile/wasak.jpg'
+import jihuiLogo from '/member/profile/jihui.jpg'
+import srpntLogo from '/member/profile/srpnt.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>UNIT-1M</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+          TEST
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        에반게리온 / 나혼렙 / 팬스가 / ...
       </p>
+
+      <div className='members'>
+        <div className='member'>
+        <img src={srpntLogo} className="logo" />
+        <span className='member-name'>SRPNT</span>
+        </div>
+        <div className='member'>
+          <img src={wasakLogo} className="logo" />
+        <span className='member-name'>WASAK</span>
+        </div>
+        <div className='member'>
+          <img src={jihuiLogo} className="logo" />
+        <span className='member-name'>G-HYI</span>
+        </div>
+      </div>
     </>
   )
 }
