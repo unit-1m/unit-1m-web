@@ -1,4 +1,4 @@
-import wasakLogo from '/member/profile/wasak.jpg'
+import wasakLogo from '/member/profile/wasak.png'
 import jihuiLogo from '/member/profile/jihui.jpg'
 import srpntLogo from '/member/profile/srpnt.png'
 import './App.css'
@@ -16,15 +16,15 @@ function App() {
 
       <div className='members'>
         <div className='member'>
-        <img src={srpntLogo} className="logo" />
+        <img src={srpntLogo} className="logo srpnt"/>
         <span className='member-name'>SRPNT</span>
         </div>
         <div className='member'>
-          <img src={wasakLogo} className="logo" />
+          <img src={wasakLogo} className="logo wasak" />
         <span className='member-name'>WASAK</span>
         </div>
         <div className='member'>
-          <img src={jihuiLogo} className="logo" />
+          <img src={jihuiLogo} className="logo ghyi" />
         <span className='member-name'>G-HYI</span>
         </div>
       </div>
