@@ -1,8 +1,17 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  user-select: none;
 }
 
 .title-card {
@@ -18,7 +27,7 @@
 }
 
 .member-img {
-  height: 6em;
+  height: min(6em, 25vw);
   border-radius: 100%;
 
   animation: logo-spin2 infinite 1s alternate ease-in-out;
@@ -36,6 +45,20 @@
   }
 }
 
+@keyframes appear {
+  from {
+    opacity: 0.001;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fx-appear {
+  animation: appear .25s;
+}
+
 .summary {
   color: #888;
   font-size: .5em;
@@ -46,6 +69,7 @@
   display: flex;
   justify-content: center;
   gap: 1em;
+  flex-wrap: wrap;
 }
 
 .member-card {
@@ -53,13 +77,19 @@
   flex-direction: column;
   align-items: center;
   background-color: #00000033;
-  padding: 2em;
+  padding: min(5vw, 2em);
   border-radius: 1em;
 }
 
 .member-name {
   font-weight: bold;
   margin-top: 1em;
+}
+
+.member-mbti {
+  font-style: italic;
+  font-size: .75em;
+  opacity: .5;
 }
 
 .specific-data-segment {
@@ -75,4 +105,36 @@
 
 .specific-data-segment .label {
   font-weight: bold;
+  display: none;
+}
+
+.member-specifics-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00000033;
+  padding: 2em;
+  border-radius: 1em;
+  user-select: none;
+
+}
+
+.hr-default {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, #3330, #333, #3330);
+  margin: 1em 0;
+}
+
+.url.instagram {
+  opacity: .5;
+  font-style: italic;
+}
+
+footer {
+  /* place at the bottom */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
 }

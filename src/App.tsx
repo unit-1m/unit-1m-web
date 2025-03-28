@@ -1,60 +1,10 @@
-import wasakLogo from '/member/profile/wasak.png'
-import jihuiLogo from '/member/profile/jihui.jpg'
-import srpntLogo from '/member/profile/srpnt.png'
 import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
-import { ReactElement, useEffect, useState } from 'react'
-
-function MemberSpecifics(props: { data: [{ label: string, data: number }] }) {
-  return (
-    <div>
-      <div>
-        {props.data.map(member => (
-          <div className="specific-data-segment">
-            <span className="label">{member.label}</span>
-            <span className="data">{member.data}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-const MEMBER_LIST = [
-  {
-    name: 'SRPNT',
-    logo: srpntLogo,
-    color: 'hsl(0, 20%, 25%)',
-  },
-  {
-    name: 'WASAK',
-    logo: wasakLogo,
-    color: 'hsl(225, 20%, 25%)',
-  },
-  {
-    name: 'G-HYI',
-    logo: jihuiLogo,
-    color: 'hsl(305, 20%, 25%)',
-  },
-]
-const MEMBER_DATA = [[
-  {
-    label: '이름',
-    data: 'SRPNT' },
-  {
-    label: '나이',
-    data: 3000,
-  },
-  {
-    label: '키',
-    data: 165,
-  },
-  {
-    label: '몸무게',
-    data: 50,
-  },
-]]
+import { ReactElement, useCallback, useEffect, useState } from 'react'
+import { MEMBER_LIST } from './MEMBER_LIST'
+import { MEMBER_DATA } from './MEMBER_DATA'
+import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
 function App() {
   const memberCards = MEMBER_LIST
@@ -62,44 +12,63 @@ function App() {
       <MemberCard
         name={member.name}
         logo={member.logo}
+        mbti={member.mbti}
         bgColor={member.color}
-        onClick={() => setSelectedMember(member.name)}
+        onClick={() => onMemberCardClick(member.name)}
       >
       </MemberCard>
     ))
 
-  const [selectedMember, setSelectedMember] = useState<string | null>(null)
+  const [selectedMember, setSelectedMember] = useState<string | null>('SRPNT')
 
-  const [selectedMemberSpecifics, setSelectedMemberSpecifics] = useState<ReactElement>()
+  const [memberSpecificsCard, setMemberSpecificsCard] = useState<ReactElement>()
+
+  const onMemberCardClick = useCallback((name: string) => {
+    if (selectedMember === name) {
+      setSelectedMember(null)
+      return
+    }
+    setSelectedMember(name)
+  }, [selectedMember])
 
   useEffect(() => {
-    return
-
     const data = MEMBER_DATA.find(member => member[0].data === selectedMember)
     if (data === undefined) {
-      setSelectedMemberSpecifics(null)
+      setMemberSpecificsCard(<></>)
       return
     }
 
-    setSelectedMemberSpecifics(<MemberSpecifics data={data}></MemberSpecifics>)
+    setMemberSpecificsCard(<MemberSpecifics data={data}></MemberSpecifics>)
   }, [selectedMember])
 
   return (
     <>
-      <div className="title-card">
-        <CircleTitle></CircleTitle>
-        <p className="summary">
-          에반게리온 / 나혼렙 / 팬스가 / 엣지러너
-        </p>
-      </div>
+      <div className="header">
+        <div className="title-card">
+          <CircleTitle></CircleTitle>
+          <p className="summary">
+            에반게리온 / 나혼렙 / 팬스가 / 엣지러너
+          </p>
+        </div>
 
-      <div className="members">
-        {memberCards}
+        <hr className="hr-default"></hr>
+
+        <div className="members">
+          {memberCards}
+        </div>
+
+        <hr className="hr-default"></hr>
       </div>
 
       <div className="member-specifics">
-        {selectedMemberSpecifics}
+        {memberSpecificsCard}
       </div>
+
+      <footer>
+        <p>
+          <a className="url instagram" href="https://www.instagram.com/unit_1m/">INSTAGRAM</a>
+        </p>
+      </footer>
     </>
   )
 }
