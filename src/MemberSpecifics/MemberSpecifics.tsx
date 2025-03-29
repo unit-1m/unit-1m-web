@@ -1,32 +1,34 @@
 import { useEffect, useState } from 'react'
-import { MemberDataItem } from '../MEMBER_DATA'
+import { MemberData } from '../MEMBER_DATA'
+import styles from './MemberSpecifics.module.scss'
+import { MemberSpecificsSegment } from './MemberSpecificsSegment'
 
-export function MemberSpecifics(props: { data: MemberDataItem[] }) {
-  const [className, setClassName] = useState('member-specifics-card fx-appear')
+export function MemberSpecifics(props: { data: MemberData }) {
+  const [className, setClassName] = useState(styles['body'] + ' fx-appear')
 
   useEffect(() => {
-    setClassName('member-specifics-card')
+    setClassName(styles['body'])
     setTimeout(() => {
-      setClassName('member-specifics-card fx-appear')
+      setClassName(styles['body'] + ' fx-appear')
     }, 10)
   }, [props.data])
 
   return (
     <div className={className}>
       <div>
-        {props.data.map((member) => {
-          return <MemberSpecificsSegment member={member}></MemberSpecificsSegment>
-        })}
-      </div>
-    </div>
-  )
-}
+        <div className={styles['member-header']}>
+          <span className={styles['name']}>{props.data.name}</span>
+          <span className={styles['mbti']}>{props.data.mbti}</span>
+        </div>
 
-function MemberSpecificsSegment(props: { member: MemberDataItem }) {
-  return (
-    <div className="specific-data-segment">
-      <span className="label">{props.member.label}</span>
-      <span className="data">{props.member.data}</span>
+        <hr></hr>
+
+        <div className={styles['specific-data']}>
+          {props.data.stats?.map((stat) => {
+            return <MemberSpecificsSegment member={stat}></MemberSpecificsSegment>
+          })}
+        </div>
+      </div>
     </div>
   )
 }

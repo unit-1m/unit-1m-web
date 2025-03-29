@@ -6,6 +6,8 @@ import { MEMBER_LIST } from './MEMBER_LIST'
 import { MEMBER_DATA } from './MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
+import styles from './App.module.scss'
+
 function App() {
   const memberCards = MEMBER_LIST
     .map(member => (
@@ -19,7 +21,7 @@ function App() {
       </MemberCard>
     ))
 
-  const [selectedMember, setSelectedMember] = useState<string | null>('SRPNT')
+  const [selectedMember, setSelectedMember] = useState<string | null>(null)
 
   const [memberSpecificsCard, setMemberSpecificsCard] = useState<ReactElement>()
 
@@ -32,7 +34,7 @@ function App() {
   }, [selectedMember])
 
   useEffect(() => {
-    const data = MEMBER_DATA.find(member => member[0].data === selectedMember)
+    const data = MEMBER_DATA.find(member => member.name === selectedMember)
     if (data === undefined) {
       setMemberSpecificsCard(<></>)
       return
@@ -43,32 +45,27 @@ function App() {
 
   return (
     <>
-      <div className="header">
-        <div className="title-card">
+      <div className={styles['header']}>
+        <div className={styles['title-card']}>
           <CircleTitle></CircleTitle>
-          <p className="summary">
+          <p className={styles['summary']}>
             에반게리온 / 나혼렙 / 팬스가 / 엣지러너
           </p>
+          <a className="url instagram" href="https://www.instagram.com/unit_1m/">INSTAGRAM</a>
         </div>
 
         <hr className="hr-default"></hr>
 
-        <div className="members">
+        <div className={styles['members']}>
           {memberCards}
         </div>
 
         <hr className="hr-default"></hr>
       </div>
 
-      <div className="member-specifics">
+      <div className={styles['member-specifics']}>
         {memberSpecificsCard}
       </div>
-
-      <footer>
-        <p>
-          <a className="url instagram" href="https://www.instagram.com/unit_1m/">INSTAGRAM</a>
-        </p>
-      </footer>
     </>
   )
 }
