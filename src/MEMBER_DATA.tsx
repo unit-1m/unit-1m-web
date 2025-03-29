@@ -30,6 +30,7 @@ export const MEMBER_DATA: MemberData[] = [
     mbti: 'INTP',
     stats: [
       { label: '고양이' },
+      { label: '외계생물' },
       { label: '코믹월드 318 일산' },
     ],
   },
