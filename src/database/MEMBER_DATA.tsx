@@ -1,15 +1,4 @@
-export type StatData = {
-  label: string
-  data?: string
-  type?: 'BUFF' | 'NURF'
-}
-
-// Define the type for each element
-export type MemberData = {
-  name: string
-  mbti: string
-  stats?: StatData[]
-}
+import { MemberData } from './MemberData'
 
 // Define the type for the MEMBER_DATA array
 export const MEMBER_DATA: MemberData[] = [
@@ -22,7 +11,11 @@ export const MEMBER_DATA: MemberData[] = [
       { label: '콜라 체력 회복량', data: '+5%', type: 'BUFF' },
       { label: '만성 편두통', data: '', type: 'NURF' },
       { label: '지구력', data: '-2', type: 'NURF' },
-      { label: '코믹월드 318 일산' },
+    ],
+
+    events: [
+      '코믹월드 318',
+      '일러스타 페어 7',
     ],
   },
   {
@@ -31,7 +24,11 @@ export const MEMBER_DATA: MemberData[] = [
     stats: [
       { label: '고양이' },
       { label: '외계생물' },
-      { label: '코믹월드 318 일산' },
+    ],
+
+    events: [
+      '코믹월드 318',
+      '일러스타 페어 7',
     ],
   },
   {
@@ -39,7 +36,11 @@ export const MEMBER_DATA: MemberData[] = [
     mbti: 'INFP',
     stats: [
       { label: '인간' },
-      { label: '코믹월드 318 일산' },
+    ],
+
+    events: [
+      '코믹월드 318',
+      '일러스타 페어 7',
     ],
   },
 ]

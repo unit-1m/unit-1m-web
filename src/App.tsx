@@ -2,8 +2,8 @@ import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
 import { ReactElement, useCallback, useEffect, useState } from 'react'
-import { MEMBER_LIST } from './MEMBER_LIST'
-import { MEMBER_DATA } from './MEMBER_DATA'
+import { MEMBER_LIST } from './database/MEMBER_LIST'
+import { MEMBER_DATA } from './database/MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
@@ -17,8 +17,7 @@ function App() {
         mbti={member.mbti}
         bgColor={member.color}
         onClick={() => onMemberCardClick(member.name)}
-      >
-      </MemberCard>
+      />
     ))
 
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
@@ -40,27 +39,29 @@ function App() {
       return
     }
 
-    setMemberSpecificsCard(<MemberSpecifics data={data}></MemberSpecifics>)
+    setMemberSpecificsCard(<MemberSpecifics data={data} />)
   }, [selectedMember])
 
   return (
     <>
       <div className={styles['header']}>
         <div className={styles['title-card']}>
-          <CircleTitle></CircleTitle>
+          <CircleTitle />
           <p className={styles['summary']}>
             에반게리온 / 나혼렙 / 팬스가 / 엣지러너
           </p>
-          <a className="url instagram" href="https://www.instagram.com/unit_1m/">INSTAGRAM</a>
+          <a className="url instagram" href="https://www.instagram.com/unit_1m/">
+            INSTAGRAM
+          </a>
         </div>
 
-        <hr className="hr-default"></hr>
+        <hr className="hr-default" />
 
         <div className={styles['members']}>
           {memberCards}
         </div>
 
-        <hr className="hr-default"></hr>
+        <hr className="hr-default" />
       </div>
 
       <div className={styles['member-specifics']}>

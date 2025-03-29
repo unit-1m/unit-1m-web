@@ -26,6 +26,10 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-    },
-  },
+      "@stylistic/jsx-self-closing-comp": ["warn", {
+        "component": true,
+        "html": true
+}],
+    }, 
+  }, 
 )

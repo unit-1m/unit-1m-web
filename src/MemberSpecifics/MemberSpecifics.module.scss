@@ -12,6 +12,13 @@
 		background-color: #fff3;
 		border: none;
 	}
+
+	hr.hr-wide {
+		margin: 2em;
+		height: 1px;
+		background-color: #fff3;
+		border: none;
+	}
 }
 
 .member-header {
@@ -29,6 +36,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
 	gap: 0.25em;
 }
 
@@ -67,4 +75,14 @@
 	&.nurf .label {
 		color: #c74f4f;
 	}
+}
+
+.events-data {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	place-content: center;
+	place-items: center;
+
+	gap: 0.5em;
 }

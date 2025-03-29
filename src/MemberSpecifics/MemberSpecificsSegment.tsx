@@ -1,4 +1,4 @@
-import { StatData } from '../MEMBER_DATA'
+import { StatData } from '../database/StatData'
 import styles from './MemberSpecifics.module.scss'
 
 export function MemberSpecificsSegment(props: { member: StatData }) {
