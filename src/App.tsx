@@ -77,6 +77,7 @@ function App() {
               key={index}
               label={goods.label}
               path={goods.path}
+              authors={goods.authors}
             />
           ))
         }
