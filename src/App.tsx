@@ -7,6 +7,8 @@ import { MEMBER_DATA } from './database/MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
+import { GOODS_DATA } from './database/GOODS_DATA'
+import { GoodsCard } from './GoodsCard/GoodsCard'
 
 function App() {
   const memberCards = MEMBER_LIST
@@ -66,6 +68,18 @@ function App() {
 
       <div className={styles['member-specifics']}>
         {memberSpecificsCard}
+      </div>
+
+      <div className={styles['goods-board']}>
+        {
+          GOODS_DATA.map((goods, index) => (
+            <GoodsCard
+              key={index}
+              label={goods.label}
+              path={goods.path}
+            />
+          ))
+        }
       </div>
     </>
   )
