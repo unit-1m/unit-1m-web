@@ -88,4 +88,9 @@ export const GOODS_DATA: GoodsData[] = [
     label: '나혼렙 성진우',
     authors: ['WASAK'],
   },
+  {
+    path: place_holder,
+    label: '에반게리온 파일',
+    authors: ['G-HYI'],
+  },
 ]
