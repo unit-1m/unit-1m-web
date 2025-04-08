@@ -81,6 +81,7 @@ function App() {
             />
           ))
         }
+        <div className={styles['goods-board-more']} />
       </div>
     </>
   )
