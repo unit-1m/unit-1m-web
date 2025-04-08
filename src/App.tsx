@@ -75,13 +75,13 @@ function App() {
           GOODS_DATA.map((goods, index) => (
             <GoodsCard
               key={index}
-              label={goods.label}
-              path={goods.path}
-              authors={goods.authors}
+              data={goods}
             />
           ))
         }
-        <div className={styles['goods-board-more']} />
+        <div className={styles['goods-board-more']}>
+          and more...
+        </div>
       </div>
     </>
   )

@@ -4,30 +4,12 @@
   text-align: center;
 }
 
-
-
 .circle-title {
   margin: 0 0 0.25em 0;
 }
 
-.member-img {
-  height: min(6em, 25vw);
-  border-radius: 100%;
-
-  animation: logo-spin2 infinite 1s alternate ease-in-out;
-}
 
 .logo:hover {}
-
-@keyframes logo-spin2 {
-  from {
-    transform: rotate(10deg);
-  }
-
-  to {
-    transform: rotate(-10deg);
-  }
-}
 
 @keyframes appear {
   from {

@@ -17,3 +17,25 @@
 		opacity: .5;
 	}
 }
+
+
+.member-icon-circle {
+	display: flex;
+
+	.img {
+		height: min(6em, 25vw);
+		border-radius: 100%;
+
+		animation: logo-spin2 infinite 1s alternate ease-in-out;
+	}
+}
+
+@keyframes logo-spin2 {
+	from {
+		transform: rotate(10deg);
+	}
+
+	to {
+		transform: rotate(-10deg);
+	}
+}

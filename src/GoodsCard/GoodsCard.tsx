@@ -1,20 +1,27 @@
 import { GoodsData } from '../database/GoodsData'
+import { MEMBER_LIST } from '../database/MEMBER_LIST'
+import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
 import styles from './styles.module.scss'
 
-export function GoodsCard(props: GoodsData) {
+export function GoodsCard(props: { data: GoodsData }) {
   return (
     <div className={styles['goods-card']}>
-      <img className={styles['img']} src={props.path} />
+      <img className={styles['img']} src={props.data.path} />
       <div className={styles['author-container']}>
-        { props.authors.map((author, index) => {
+        { props.data.authors.map((author, index) => {
+          const imgPath = MEMBER_LIST.find(member => member.name === author)?.logo
+
           return (
             <div key={index} className={styles['author']}>
-              {'by ' + author}
+              <span>
+                {'by ' + author}
+              </span>
+              <MemberIconCircle logo={imgPath ?? ''} styles={{ height: '1.5em' }} />
             </div>
           )
         })}
       </div>
-      <span className={styles['label']}>{props.label}</span>
+      <span className={styles['label']}>{props.data.label}</span>
     </div>
   )
 }

@@ -93,4 +93,9 @@ export const GOODS_DATA: GoodsData[] = [
     label: '에반게리온 파일',
     authors: ['G-HYI'],
   },
+  {
+    path: place_holder,
+    label: '카오루',
+    authors: ['WASAK'],
+  },
 ]
