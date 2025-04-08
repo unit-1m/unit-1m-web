@@ -76,4 +76,9 @@ export const GOODS_DATA: GoodsData[] = [
     label: '나혼렙 아크릴 코롯토',
     authors: ['WASAK'],
   },
+  {
+    path: place_holder,
+    label: '나혼렙 성진우',
+    authors: ['WASAK'],
+  },
 ]
