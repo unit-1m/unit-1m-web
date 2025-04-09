@@ -4,6 +4,8 @@ import eva_gun_sword from '/goods/eva-gun-sword 800x.jpg'
 import eva_asuka_sitting from '/goods/asuka_sitting 800x.jpg'
 import eva_water from '/goods/eva-water p.card.png'
 import gh_asuka from '/goods/gh-asuka.jpg'
+import gh_badge_asuka from '/goods/gh_badge_asuka.jpg'
+import gh_badge_rei from '/goods/gh_badge_rei.jpg'
 import gh_rei from '/goods/gh-rei.jpg'
 import place_holder from '/goods/goods-img-placeholder.jpg'
 
@@ -37,6 +39,16 @@ export const GOODS_DATA: GoodsData[] = [
     path: eva_water,
     label: '아스카',
     authors: ['SRPNT'],
+  },
+  {
+    path: gh_badge_asuka,
+    label: '아스카 뱃지',
+    authors: ['G-HYI'],
+  },
+  {
+    path: gh_badge_rei,
+    label: '레이 뱃지',
+    authors: ['G-HYI'],
   },
   {
     path: place_holder,
