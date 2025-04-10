@@ -9,6 +9,7 @@ import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 import styles from './App.module.scss'
 import { GOODS_DATA } from './database/GOODS_DATA'
 import { GoodsCard } from './GoodsCard/GoodsCard'
+import Masonry from 'react-masonry-css'
 
 function App() {
   const memberCards = MEMBER_LIST
@@ -71,17 +72,23 @@ function App() {
       </div>
 
       <div className={styles['goods-board']}>
-        {
-          GOODS_DATA.map((goods, index) => (
-            <GoodsCard
-              key={index}
-              data={goods}
-            />
-          ))
-        }
-        <div className={styles['goods-board-more']}>
-          and more...
-        </div>
+        <Masonry
+          breakpointCols={{ default: 4, 800: 3 }}
+          className={styles['my-masonry-grid']}
+          columnClassName={styles['my-masonry-grid_column']}
+        >
+          {
+            GOODS_DATA.map((goods, index) => (
+              <GoodsCard
+                key={index}
+                data={goods}
+              />
+            ))
+          }
+          <div className={styles['goods-board-more']}>
+            and more...
+          </div>
+        </Masonry>
       </div>
     </>
   )

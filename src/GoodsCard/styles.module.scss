@@ -4,12 +4,12 @@
 	align-items: center;
 	background-color: #ffffff44;
 	padding: .5em;
-	width: min(25vw, 16em);
+	width: min(20vw, 20em);
 	border-radius: .25em;
 	box-shadow: 0 8px 1em #00000044;
 
-	transition: width 0.2s ease-in-out,
-		padding 0.2s ease-in-out, ;
+	// transition: width 0.2s ease-in-out,
+	// 	padding 0.2s ease-in-out, ;
 
 	.img {
 		width: 100%;
@@ -42,7 +42,7 @@
 
 @media (max-width: 800px) {
 	.goods-card {
-		width: min(25vw, 16em);
+		width: 90%;
 		padding: .25em;
 	}
 }
