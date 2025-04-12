@@ -1,11 +1,12 @@
 .body {
 	display: flex;
-	background-color: #00000033;
-	padding: 2em;
-	border-radius: 1em;
+	flex-direction: column;
+	background-color: #111111;
+	padding: 2rem;
+	border-radius: 1rem;
 	user-select: none;
 
-	max-width: min(75vw, 32em);
+	max-width: 90vw;
 
 	hr {
 		height: 1px;
@@ -14,20 +15,25 @@
 	}
 
 	hr.hr-wide {
-		margin: 2em;
+		margin: 2rem;
 		height: 1px;
 		background-color: #fff3;
 		border: none;
+	}
+
+	>div {
+		font-size: 1rem;
 	}
 }
 
 .member-header {
 	display: flex;
 	flex-direction: column;
+	place-items: center;
 
 	.name {
-		font-size: 1.5em;
 		font-weight: bold;
+		margin-top: 1rem;
 	}
 }
 
@@ -37,17 +43,17 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 0.25em;
+	gap: 0.25rem;
 }
 
 .specific-data-segment {
 	display: flex;
 	justify-content: center;
-	gap: .25em;
+	gap: .25rem;
 
 	background-color: #ffffff09;
-	border-radius: .25em;
-	padding: 0.5em;
+	border-radius: .25rem;
+	padding: 0.5rem;
 
 
 	.label {
@@ -84,5 +90,5 @@
 	place-content: center;
 	place-items: center;
 
-	gap: 0.5em;
+	gap: 0.5rem;
 }

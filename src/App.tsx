@@ -10,6 +10,8 @@ import styles from './App.module.scss'
 import { GOODS_DATA } from './database/GOODS_DATA'
 import { GoodsCard } from './GoodsCard/GoodsCard'
 import Masonry from 'react-masonry-css'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function App() {
   const memberCards = MEMBER_LIST
@@ -25,7 +27,9 @@ function App() {
 
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
 
-  const [memberSpecificsCard, setMemberSpecificsCard] = useState<ReactElement>()
+  // const [memberSpecificsCard, setMemberSpecificsCard] = useState<ReactElement>()
+
+  const MySwal = withReactContent(Swal)
 
   const onMemberCardClick = useCallback((name: string) => {
     if (selectedMember === name) {
@@ -38,12 +42,26 @@ function App() {
   useEffect(() => {
     const data = MEMBER_DATA.find(member => member.name === selectedMember)
     if (data === undefined) {
-      setMemberSpecificsCard(<></>)
+      // setMemberSpecificsCard(<></>)
       return
     }
 
-    setMemberSpecificsCard(<MemberSpecifics data={data} />)
-  }, [selectedMember])
+    // setMemberSpecificsCard(<MemberSpecifics data={data} />)
+    MySwal.fire({
+      title: <MemberSpecifics data={data} />,
+      showConfirmButton: false,
+      background: 'transparent',
+      backdrop: '#00000033',
+      customClass: {
+        container: 'blur-filtered',
+      },
+
+      didOpen: () => {
+        // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+        // MySwal.showLoading()
+      },
+    })
+  }, [MySwal, selectedMember])
 
   return (
     <>
@@ -67,9 +85,9 @@ function App() {
         <hr className="hr-default" />
       </div>
 
-      <div className={styles['member-specifics']}>
+      {/* <div className={styles['member-specifics']}>
         {memberSpecificsCard}
-      </div>
+      </div> */}
 
       <div className={styles['goods-board']}>
         <Masonry

@@ -4,9 +4,13 @@ import { MemberSpecificsSegment } from './MemberSpecificsSegment'
 import { MemberData } from '../database/MemberData'
 import { EVENT_DATA } from '../database/EVENT_DATA'
 import { EventSegment } from './EventSegment/EventSegment'
+import { MEMBER_LIST } from '../database/MEMBER_LIST'
+import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
 
 export function MemberSpecifics(props: { data: MemberData }) {
   const [className, setClassName] = useState(styles['body'] + ' fx-appear')
+
+  const imgPath = MEMBER_LIST.find(member => member.name === props.data.name)?.logo
 
   useEffect(() => {
     setClassName(styles['body'])
@@ -17,38 +21,37 @@ export function MemberSpecifics(props: { data: MemberData }) {
 
   return (
     <div className={className}>
+      <div className={styles['member-header']}>
+        <MemberIconCircle logo={imgPath ?? ''} styles={{ height: 'min(16em, 50vw)' }} />
+        <span className={styles['name']}>{props.data.name}</span>
+        <span className={styles['mbti']}>{props.data.mbti}</span>
+      </div>
+
+      <hr />
+
+      <div className={styles['specific-data']}>
+        {props.data.stats?.map((stat) => {
+          return <MemberSpecificsSegment member={stat} />
+        })}
+      </div>
+
+      <hr className={styles['hr-wide']} />
+
       <div>
-        <div className={styles['member-header']}>
-          <span className={styles['name']}>{props.data.name}</span>
-          <span className={styles['mbti']}>{props.data.mbti}</span>
-        </div>
+        <p>
+          참여행사
+        </p>
+      </div>
+      <div className={styles['events-data']}>
+        {props.data.events?.map((event) => {
+          const data = EVENT_DATA.find(e => e.name === event)
 
-        <hr />
+          if (data === undefined) {
+            return <></>
+          }
 
-        <div className={styles['specific-data']}>
-          {props.data.stats?.map((stat) => {
-            return <MemberSpecificsSegment member={stat} />
-          })}
-        </div>
-
-        <hr className={styles['hr-wide']} />
-
-        <div>
-          <p>
-            참여행사
-          </p>
-        </div>
-        <div className={styles['events-data']}>
-          {props.data.events?.map((event) => {
-            const data = EVENT_DATA.find(e => e.name === event)
-
-            if (data === undefined) {
-              return <></>
-            }
-
-            return <EventSegment data={data} />
-          })}
-        </div>
+          return <EventSegment data={data} />
+        })}
       </div>
     </div>
   )
