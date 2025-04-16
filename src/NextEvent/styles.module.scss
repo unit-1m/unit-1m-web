@@ -1,0 +1,62 @@
+.body {
+	display: flex;
+	flex-direction: column;
+
+	background-color: #00000033;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+.label {
+	font-size: 1.5rem;
+	margin-top: .55rem;
+	margin-bottom: .25rem;
+}
+
+.date {
+	display: grid;
+	grid-template-columns: 4fr 1fr 4fr;
+	grid-template-rows: 1fr 1fr;
+
+	.d-day {
+		grid-column: 1 / span 3;
+		grid-row: 1;
+	}
+
+	.date-start {
+		opacity: .5;
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.date-separator {
+		opacity: .5;
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.date-end {
+		opacity: .5;
+		grid-column: 3;
+		grid-row: 2;
+	}
+}
+
+.url {
+	margin-top: 1rem;
+	border: 1px solid var(--color-link);
+	place-self: center;
+	border-radius: .25rem;
+	padding: .25rem 1rem;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	height: 5rem;
+	display: block;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 100%;
+	padding: .5rem;
+}

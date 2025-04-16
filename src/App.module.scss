@@ -98,3 +98,15 @@
 		margin-bottom: .5em;
 	}
 }
+
+.event-board {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: top;
+	gap: 1em;
+	margin: 0em 1em;
+
+	transition: gap 0.2s ease-in-out;
+}

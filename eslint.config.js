@@ -29,7 +29,8 @@ export default tseslint.config(
       "@stylistic/jsx-self-closing-comp": ["warn", {
         "component": true,
         "html": true
-}],
+      }],
+      "@typescript-eslint/no-unused-vars": [ 0]
     }, 
   }, 
 )
