@@ -113,12 +113,12 @@ export const GOODS_DATA: GoodsData[] = [
     authors: ['SRPNT'],
   },
   {
-    path: eva_kao_corot,
+    path: eva_rei_corot,
     label: '에반게리온 레이 코롯토',
     authors: ['SRPNT'],
   },
   {
-    path: eva_rei_corot,
+    path: eva_kao_corot,
     label: '에반게리온 카오루 코롯토',
     authors: ['SRPNT'],
   },

@@ -2,7 +2,6 @@ import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
 import { useCallback, useEffect, useState } from 'react'
-import { MEMBER_LIST } from './database/MEMBER_LIST'
 import { MEMBER_DATA } from './database/MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
@@ -17,7 +16,8 @@ import illusta_logo from '/brands/illustar-logo.svg'
 import comic_world_logo from '/brands/comic-world-logo.svg'
 
 function App() {
-  const memberCards = MEMBER_LIST
+  const memberCards = MEMBER_DATA
+    .sort(() => Math.random() - 0.5)
     .map(member => (
       <MemberCard
         name={member.name}
@@ -68,7 +68,7 @@ function App() {
         <div className={styles['title-card']}>
           <CircleTitle />
           <p className={styles['summary']}>
-            에반게리온 / 나혼렙 / 팬스가 / 엣지러너
+            에반게리온 / 나혼렙 / 팬스가 / 엣지러너 / ...
           </p>
           <a className="url instagram" href="https://www.instagram.com/unit_1m/">
             INSTAGRAM
@@ -111,12 +111,13 @@ function App() {
           columnClassName={styles['my-masonry-grid_column']}
         >
           {
-            GOODS_DATA.map((goods, index) => (
-              <GoodsCard
-                key={index}
-                data={goods}
-              />
-            ))
+            GOODS_DATA
+              .map((goods, index) => (
+                <GoodsCard
+                  key={index}
+                  data={goods}
+                />
+              ))
           }
           <div className={styles['goods-board-more']}>
             and more...

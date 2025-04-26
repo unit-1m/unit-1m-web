@@ -4,13 +4,13 @@ import { MemberSpecificsSegment } from './MemberSpecificsSegment'
 import { MemberData } from '../database/MemberData'
 import { EVENT_DATA } from '../database/EVENT_DATA'
 import { EventSegment } from './EventSegment/EventSegment'
-import { MEMBER_LIST } from '../database/MEMBER_LIST'
 import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
+import { MEMBER_DATA } from '../database/MEMBER_DATA'
 
 export function MemberSpecifics(props: { data: MemberData }) {
   const [className, setClassName] = useState(styles['body'] + ' fx-appear')
 
-  const imgPath = MEMBER_LIST.find(member => member.name === props.data.name)?.logo
+  const imgPath = MEMBER_DATA.find(member => member.name === props.data.name)?.logo
 
   useEffect(() => {
     setClassName(styles['body'])

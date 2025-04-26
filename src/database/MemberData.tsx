@@ -5,4 +5,6 @@ export type MemberData = {
   mbti: string
   stats?: StatData[]
   events?: string[]
+  logo: string
+  color: string
 }
