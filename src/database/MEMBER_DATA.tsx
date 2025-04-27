@@ -81,7 +81,7 @@ export const MEMBER_DATA: MemberData[] = [
     logo: zu0Logo,
     color: 'hsl(198, 21.30%, 30.40%)',
 
-    mbti: 'ENTP',
+    mbti: 'INTP',
     stats: [
       { label: '인간' },
     ],
