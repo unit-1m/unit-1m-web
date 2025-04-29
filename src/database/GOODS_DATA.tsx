@@ -29,6 +29,10 @@ import eva_kao_corot from '/goods/EVA-KAO-CRT.jpg'
 
 import pnsg_vrt from '/goods/PSG-STK-VRT.jpg'
 
+import eva_rei_eye from '/goods/EVA-REI-EYE.jpg'
+import eva_rei_brd from '/goods/EVA-REI-BRD.jpg'
+import eva_ask_idc from '/goods/EVA-ASK-IDC.jpg'
+
 import place_holder from '/goods/goods-img-placeholder.jpg'
 
 export const GOODS_DATA: GoodsData[] = [
@@ -156,5 +160,20 @@ export const GOODS_DATA: GoodsData[] = [
     path: place_holder,
     label: '카오루',
     authors: ['WASAK'],
+  },
+  {
+    path: eva_rei_eye,
+    label: '레이',
+    authors: ['Zu0'],
+  },
+  {
+    path: eva_rei_brd,
+    label: '레이',
+    authors: ['Zu0'],
+  },
+  {
+    path: eva_ask_idc,
+    label: '아스카',
+    authors: ['Zu0'],
   },
 ]
