@@ -14,21 +14,11 @@ import withReactContent from 'sweetalert2-react-content'
 import { NextEvent } from './NextEvent/NextEvent'
 import illusta_logo from '/brands/illustar-logo.svg'
 import comic_world_logo from '/brands/comic-world-logo.svg'
+import { MemberData } from './database/MemberData'
 
 function App() {
-  const memberCards = MEMBER_DATA
-    .sort(() => Math.random() - 0.5)
-    .map(member => (
-      <MemberCard
-        name={member.name}
-        logo={member.logo}
-        mbti={member.mbti}
-        bgColor={member.color}
-        onClick={() => onMemberCardClick(member.name)}
-      />
-    ))
-
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
+  const [memberData, setMemberData] = useState<MemberData[]>([])
 
   const MySwal = withReactContent(Swal)
 
@@ -39,6 +29,12 @@ function App() {
     }
     setSelectedMember(name)
   }, [selectedMember])
+
+  useEffect(() => {
+    const newMemberData = MEMBER_DATA
+      .sort(() => Math.random() - 0.5)
+    setMemberData(newMemberData)
+  }, [])
 
   useEffect(() => {
     const data = MEMBER_DATA.find(member => member.name === selectedMember)
@@ -78,7 +74,15 @@ function App() {
         <hr className="hr-default" />
 
         <div className={styles['members']}>
-          {memberCards}
+          {memberData.map(member => (
+            <MemberCard
+              name={member.name}
+              logo={member.logo}
+              mbti={member.mbti}
+              bgColor={member.color}
+              onClick={() => onMemberCardClick(member.name)}
+            />
+          ))}
         </div>
 
         <hr className="hr-default" />
