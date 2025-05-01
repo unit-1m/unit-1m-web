@@ -2,7 +2,6 @@ import { MemberData } from './MemberData'
 import wasakLogo from '/member/profile/wasak.png'
 import jihuiLogo from '/member/profile/jihui.jpg'
 import srpntLogo from '/member/profile/srpnt.png'
-import dhLogo from '/member/profile/dh.jpg'
 import zu0Logo from '/member/profile/zu0.jpg'
 
 // Define the type for the MEMBER_DATA array
@@ -57,21 +56,6 @@ export const MEMBER_DATA: MemberData[] = [
 
     events: [
       '코믹월드 318',
-      '일러스타 페어 7',
-    ],
-  },
-  {
-    name: 'D.H',
-
-    logo: dhLogo,
-    color: 'hsl(57, 31.00%, 33.50%)',
-
-    mbti: 'XXXX',
-    stats: [
-      { label: '인간' },
-    ],
-
-    events: [
       '일러스타 페어 7',
     ],
   },
