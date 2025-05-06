@@ -12,9 +12,8 @@ import Masonry from 'react-masonry-css'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { NextEvent } from './NextEvent/NextEvent'
-import illusta_logo from '/brands/illustar-logo.svg'
-import comic_world_logo from '/brands/comic-world-logo.svg'
 import { MemberData } from './database/MemberData'
+import { EVENT_DATA } from './database/EVENT_DATA'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
@@ -91,20 +90,26 @@ function App() {
       <h2>Upcoming Events</h2>
 
       <div className={styles['event-board']}>
-        <NextEvent
-          label="일러스타 페스 7"
-          dateStart={new Date('2025-05-03')}
-          dateEnd={new Date('2025-05-04')}
-          url="https://illustar.net/"
-          logo={illusta_logo}
-        />
-        <NextEvent
-          label="코믹월드 320 수원"
-          dateStart={new Date('2025-05-17')}
-          dateEnd={new Date('2025-05-18')}
-          url="https://comicw.co.kr/"
-          logo={comic_world_logo}
-        />
+        {
+          EVENT_DATA
+            .filter((event) => {
+              const today = new Date()
+              const startDate = new Date(event.date.start)
+
+              const endDate = new Date(event.date.end)
+              return startDate >= today || endDate >= today
+            })
+            .map((event, index) => (
+              <NextEvent
+                key={index}
+                label={event.name}
+                dateStart={new Date(event.date.start)}
+                dateEnd={new Date(event.date.end)}
+                url={event.url ?? ''}
+                logo={event.logo}
+              />
+            ))
+        }
       </div>
 
       <h2>작품</h2>

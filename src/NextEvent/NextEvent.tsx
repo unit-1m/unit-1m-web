@@ -1,6 +1,26 @@
 import styles from './styles.module.scss'
 
 export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date, url: string, logo?: string }) {
+  const dateElement = props.dateEnd
+    ? (
+        <span className={styles['date-single']}>
+          {toDateString(props.dateEnd)}
+        </span>
+      )
+    : (
+        <>
+          <span className={styles['date-start']}>
+            {toDateString(props.dateStart)}
+          </span>
+          <span className={styles['date-separator']}>
+            {' ~ '}
+          </span>
+          <span className={styles['date-end']}>
+            {toDateString(props.dateEnd)}
+          </span>
+        </>
+      )
+
   return (
     <div className={styles['body']}>
       <img className={styles['logo']} src={props.logo} alt="logo" />
@@ -12,15 +32,7 @@ export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date
           {getDDay(props.dateStart) >= 0 ? `D-${getDDay(props.dateStart)}` : 'D-Day'}
         </span>
 
-        <span className={styles['date-start']}>
-          {toDateString(props.dateStart)}
-        </span>
-        <span className={styles['date-separator']}>
-          {' ~ '}
-        </span>
-        <span className={styles['date-end']}>
-          {toDateString(props.dateEnd)}
-        </span>
+        {dateElement}
       </div>
       <div className={styles['url']}>
         <a className="url" href={props.url} target="_blank" rel="noopener noreferrer">

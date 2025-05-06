@@ -40,6 +40,12 @@
 		grid-column: 3;
 		grid-row: 2;
 	}
+
+	.date-single {
+		opacity: .5;
+		grid-column: 1 / span 3;
+		grid-row: 2;
+	}
 }
 
 .url {
