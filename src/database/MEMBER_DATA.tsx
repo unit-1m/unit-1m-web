@@ -2,6 +2,7 @@ import { MemberData } from './MemberData'
 import wasakLogo from '/member/profile/wasak.png'
 import jihuiLogo from '/member/profile/jihui.jpg'
 import srpntLogo from '/member/profile/srpnt.png'
+import thomasLogo from '/member/profile/thomas.webp'
 import zu0Logo from '/member/profile/zu0.jpg'
 
 // Define the type for the MEMBER_DATA array
@@ -22,8 +23,9 @@ export const MEMBER_DATA: MemberData[] = [
     ],
 
     events: [
-      '코믹월드 318',
-      '일러스타 페어 7',
+      '코믹월드 318 일산',
+      '일러스타 페스 7',
+      '코믹월드 320 수원',
     ],
   },
   {
@@ -39,8 +41,8 @@ export const MEMBER_DATA: MemberData[] = [
     ],
 
     events: [
-      '코믹월드 318',
-      '일러스타 페어 7',
+      '코믹월드 318 일산',
+      '일러스타 페스 7',
     ],
   },
   {
@@ -55,8 +57,8 @@ export const MEMBER_DATA: MemberData[] = [
     ],
 
     events: [
-      '코믹월드 318',
-      '일러스타 페어 7',
+      '코믹월드 318 일산',
+      '일러스타 페스 7',
     ],
   },
   {
@@ -71,7 +73,21 @@ export const MEMBER_DATA: MemberData[] = [
     ],
 
     events: [
-      '일러스타 페어 7',
+      '일러스타 페스 7',
+      '코믹월드 320 수원',
     ],
+  },
+  {
+    name: 'THOMAS',
+    mbti: 'XXXX',
+
+    logo: thomasLogo,
+    color: 'hsl(143, 20.30%, 25.10%)',
+
+    stats: [
+      { label: '인간', data: '' },
+    ],
+
+    events: [],
   },
 ]

@@ -63,7 +63,7 @@ function App() {
         <div className={styles['title-card']}>
           <CircleTitle />
           <p className={styles['summary']}>
-            에반게리온 / 나혼렙 / 팬스가 / 엣지러너 / ...
+            에반게리온 / 나혼렙 / 팬스가 / 엣지러너 / 헬다이버즈 ...
           </p>
           <a className="url instagram" href="https://www.instagram.com/unit_1m/">
             INSTAGRAM

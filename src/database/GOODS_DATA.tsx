@@ -35,7 +35,35 @@ import eva_ask_idc from '/goods/EVA-ASK-IDC.jpg'
 
 import eva_kao_vrt from '/goods/EVA-KAO-VRT.jpg'
 
+import HD2_SOL_FLG_A from '/goods/HD2-SOL-FLG-A.jpg'
+import HD2_SOL_FLG_B from '/goods/HD2-SOL-FLG-B.jpg'
+import CPE_LCY_HAG from '/goods/CPE-LCY-HAG.jpg'
+import CPE_RBC_GUN from '/goods/CPE-RBC-GUN.jpg'
+
 import place_holder from '/goods/goods-img-placeholder.jpg'
+
+const thomasGoods: GoodsData[] = [
+  {
+    path: HD2_SOL_FLG_A,
+    label: '헬다이버 핀업',
+    authors: ['THOMAS'],
+  },
+  {
+    path: HD2_SOL_FLG_B,
+    label: '헬다이버 핀업',
+    authors: ['THOMAS'],
+  },
+  {
+    path: CPE_LCY_HAG,
+    label: '루시',
+    authors: ['THOMAS'],
+  },
+  {
+    path: CPE_RBC_GUN,
+    label: '레베카',
+    authors: ['THOMAS'],
+  },
+]
 
 export const GOODS_DATA: GoodsData[] = [
   {
@@ -148,16 +176,16 @@ export const GOODS_DATA: GoodsData[] = [
     label: '나혼렙 이그리트 코롯토',
     authors: ['WASAK'],
   },
-  {
-    path: place_holder,
-    label: '나혼렙 성진우',
-    authors: ['WASAK'],
-  },
-  {
-    path: place_holder,
-    label: '에반게리온 파일',
-    authors: ['G-HYI'],
-  },
+  // {
+  //   path: place_holder,
+  //   label: '나혼렙 성진우',
+  //   authors: ['WASAK'],
+  // },
+  // {
+  //   path: place_holder,
+  //   label: '에반게리온 파일',
+  //   authors: ['G-HYI'],
+  // },
   {
     path: eva_kao_vrt,
     label: '카오루',
@@ -178,4 +206,6 @@ export const GOODS_DATA: GoodsData[] = [
     label: '아스카',
     authors: ['Zu0'],
   },
+
+  ...thomasGoods,
 ]

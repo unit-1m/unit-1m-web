@@ -5,7 +5,7 @@ import illusta_logo from '/brands/illustar-logo.svg'
 
 export const EVENT_DATA: EventData[] = [
   {
-    name: '코믹월드 318',
+    name: '코믹월드 318 일산',
     date: {
       start: '2025-03-22',
       end: '2025-03-23',
