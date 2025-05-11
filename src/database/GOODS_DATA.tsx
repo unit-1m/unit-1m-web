@@ -40,7 +40,7 @@ import HD2_SOL_FLG_B from '/goods/HD2-SOL-FLG-B.jpg'
 import CPE_LCY_HAG from '/goods/CPE-LCY-HAG.jpg'
 import CPE_RBC_GUN from '/goods/CPE-RBC-GUN.jpg'
 
-import place_holder from '/goods/goods-img-placeholder.jpg'
+// import place_holder from '/goods/goods-img-placeholder.jpg'
 
 const thomasGoods: GoodsData[] = [
   {
