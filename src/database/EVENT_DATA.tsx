@@ -29,4 +29,20 @@ export const EVENT_DATA: EventData[] = [
     url: 'https://comicw.co.kr/',
     logo: comic_world_logo,
   },
+  { name: '코믹월드 SUMMER',
+    date: {
+      start: '2025-07-19',
+      end: '2025-07-20',
+    },
+    url: 'https://comicw.co.kr/',
+    logo: comic_world_logo,
+  },
+  { name: '코믹월드 324 일산',
+    date: {
+      start: '2025-09-13',
+      end: '2025-09-14',
+    },
+    url: 'https://comicw.co.kr/',
+    logo: comic_world_logo,
+  },
 ]

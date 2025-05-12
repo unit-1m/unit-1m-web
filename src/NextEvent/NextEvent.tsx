@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 
 export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date, url: string, logo?: string }) {
-  const dateElement = props.dateEnd
+  const dateElement = shouldRemoveEndDate(props.dateStart, props.dateEnd)
     ? (
         <span className={styles['date-single']}>
           {toDateString(props.dateEnd)}
@@ -31,7 +31,6 @@ export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date
         <span className={styles['d-day']}>
           {getDDay(props.dateStart) >= 0 ? `D-${getDDay(props.dateStart)}` : 'D-Day'}
         </span>
-
         {dateElement}
       </div>
       <div className={styles['url']}>
@@ -41,6 +40,15 @@ export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date
       </div>
     </div>
   )
+}
+
+function shouldRemoveEndDate(dateStart: Date, dateEnd: Date) {
+  if (dateEnd === null)
+    return true
+  if (dateStart.toString() === dateEnd.toString())
+    return true
+
+  return false
 }
 
 function toDateString(date: Date) {
