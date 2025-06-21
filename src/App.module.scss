@@ -110,3 +110,21 @@
 
 	transition: gap 0.2s ease-in-out;
 }
+
+.sns-frame {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: .5rem;
+}
+
+.url.instagram {
+	opacity: .5;
+	font-style: italic;
+	font-size: .5em;
+
+	background: #00000066;
+	border-radius: 1rem;
+	padding: .2em 1em;
+}

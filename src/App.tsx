@@ -1,7 +1,7 @@
 import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { MEMBER_DATA } from './database/MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
@@ -14,6 +14,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { NextEvent } from './NextEvent/NextEvent'
 import { MemberData } from './database/MemberData'
 import { EVENT_DATA } from './database/EVENT_DATA'
+import { supabase } from './database/supabase/supabaseClient'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
@@ -29,10 +30,52 @@ function App() {
     setSelectedMember(name)
   }, [selectedMember])
 
+  // const gotsupabase = useRef<boolean>(false)
   useEffect(() => {
     const newMemberData = MEMBER_DATA
       .sort(() => Math.random() - 0.5)
     setMemberData(newMemberData)
+
+    // if (gotsupabase.current) {
+    //   return
+    // }
+    // gotsupabase.current = true
+
+    // const fn = async () => {
+    //   const members = await supabase.from('u1m-members').select('*')
+
+    //   const asData: MemberData[] = members.data?.map((raw) => {
+    //     return {
+    //       name: raw['nickname'],
+    //       mbti: raw['mbti'],
+    //       logo: raw.logo_img,
+    //       color: raw.color,
+    //       stats: raw.stats ? JSON.parse(raw.stats) : undefined,
+    //       events: raw.events ? JSON.parse(raw.events) : undefined,
+    //     }
+    //   }) ?? []
+
+    //   for (const member of asData) {
+    //     if (!member.logo) {
+    //       member.logo = ''
+    //       continue
+    //     }
+
+    //     const logo = await supabase.storage.from('member-logo').download(member.logo)
+
+    //     if (logo.data)
+    //       member.logo = URL.createObjectURL(logo.data)
+    //     else
+    //       member.logo = ''
+    //   }
+
+    //   return asData
+    // }
+
+    // fn().then((data) => {
+    //   const asRandom = data.sort(() => Math.random() - 0.5)
+    //   setMemberData(asRandom)
+    // })
   }, [])
 
   useEffect(() => {
@@ -65,18 +108,24 @@ function App() {
           <p className={styles['summary']}>
             에반게리온 / 나혼렙 / 팬스가 / 엣지러너 / 헬다이버즈 ...
           </p>
-          <a className="url instagram" href="https://www.instagram.com/unit_1m/">
-            INSTAGRAM
-          </a>
+          <div className={styles['sns-frame']}>
+            <a className={styles['url'] + ' ' + styles['instagram']} href="https://www.instagram.com/unit_1m/" target="_blank" rel="noopener noreferrer">
+              INSTAGRAM
+            </a>
+            <a className={styles['url'] + ' ' + styles['instagram']} href="https://www.x.com/unit_1m/" target="_blank" rel="noopener noreferrer">
+              X
+            </a>
+          </div>
         </div>
 
         <hr className="hr-default" />
 
         <div className={styles['members']}>
-          {memberData.map(member => (
+          {memberData.map((member, i) => (
             <MemberCard
+              key={i}
               name={member.name}
-              logo={member.logo}
+              logo={member.logo ?? ''}
               mbti={member.mbti}
               bgColor={member.color}
               onClick={() => onMemberCardClick(member.name)}

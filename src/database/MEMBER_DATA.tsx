@@ -1,6 +1,6 @@
 import { MemberData } from './MemberData'
 import wasakLogo from '/member/profile/wasak.png'
-import jihuiLogo from '/member/profile/jihui.jpg'
+import jihuiLogo from '/member/profile/g-hui.jpg'
 import srpntLogo from '/member/profile/srpnt.png'
 import thomasLogo from '/member/profile/thomas.webp'
 import zu0Logo from '/member/profile/zu0.jpg'

@@ -32,12 +32,6 @@
   margin: 1em 0;
 }
 
-.url.instagram {
-  opacity: .5;
-  font-style: italic;
-  font-size: .5em;
-}
-
 .blur-filtered {
   backdrop-filter: blur(8px);
   transition: backdrop-filter 0.25s;
