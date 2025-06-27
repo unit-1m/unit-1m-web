@@ -1,4 +1,3 @@
-
 export type IpData = {
-  title: string;
-};
+  title: string
+}

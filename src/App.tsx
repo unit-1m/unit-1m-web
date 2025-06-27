@@ -1,7 +1,7 @@
 import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
