@@ -2,18 +2,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #00000033;
-	padding: min(5vw, 2em);
-	border-radius: 1em;
+	background-color: hsl(0, 0, 10%);
+	padding: min(5vw, 2rem);
+	border-radius: .25rem;
+	border: 2px solid var(--mamber-color);
+
+	box-shadow: 0 4px 0px var(--mamber-color),
+		0 4px 8px rgba(0, 0, 0, .5);
 
 	.member-name {
 		font-weight: bold;
-		margin-top: 1em;
+		margin-top: .5rem;
 	}
 
 	.member-mbti {
 		font-style: italic;
-		font-size: .75em;
+		font-size: .75rem;
 		opacity: .5;
 	}
 }

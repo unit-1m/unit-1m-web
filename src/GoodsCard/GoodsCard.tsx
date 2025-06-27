@@ -1,5 +1,5 @@
+import { DBController } from '../database/DBController'
 import { GoodsData } from '../database/GoodsData'
-import { MEMBER_DATA } from '../database/MEMBER_DATA'
 import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
 import styles from './styles.module.scss'
 
@@ -9,7 +9,7 @@ export function GoodsCard(props: { data: GoodsData }) {
       <img className={styles['img']} src={props.data.path} />
       <div className={styles['author-container']}>
         { props.data.authors.map((author, index) => {
-          const imgPath = MEMBER_DATA.find(member => member.name === author)?.logo
+          const imgPath = DBController.instance.getMemberData().find(member => member.name === author)?.logo
 
           return (
             <div key={index} className={styles['author']}>

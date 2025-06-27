@@ -2,11 +2,9 @@ import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
 import { CircleTitle } from './CircleTitle'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { MEMBER_DATA } from './database/MEMBER_DATA'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
-import { GOODS_DATA } from './database/GOODS_DATA'
 import { GoodsCard } from './GoodsCard/GoodsCard'
 import Masonry from 'react-masonry-css'
 import Swal from 'sweetalert2'
@@ -14,11 +12,14 @@ import withReactContent from 'sweetalert2-react-content'
 import { NextEvent } from './NextEvent/NextEvent'
 import { MemberData } from './database/MemberData'
 import { EVENT_DATA } from './database/EVENT_DATA'
-import { supabase } from './database/supabase/supabaseClient'
+import { DBController } from './database/DBController'
+import { IpData } from './database/IpData'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
   const [memberData, setMemberData] = useState<MemberData[]>([])
+
+  const [ipData, setIpData] = useState<IpData[]>([])
 
   const MySwal = withReactContent(Swal)
 
@@ -32,9 +33,15 @@ function App() {
 
   // const gotsupabase = useRef<boolean>(false)
   useEffect(() => {
-    const newMemberData = MEMBER_DATA
+    const newMemberData = DBController.instance.getMemberData()
       .sort(() => Math.random() - 0.5)
+
     setMemberData(newMemberData)
+
+    const newIpData = DBController.instance.getIpData()
+      .sort(() => Math.random() - 0.5)
+
+    setIpData(newIpData)
 
     // if (gotsupabase.current) {
     //   return
@@ -79,7 +86,9 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const data = MEMBER_DATA.find(member => member.name === selectedMember)
+    const data = DBController.instance.getMemberData()
+      .find(member => member.name === selectedMember)
+
     if (data === undefined) {
       return
     }
@@ -106,19 +115,38 @@ function App() {
         <div className={styles['title-card']}>
           <CircleTitle />
           <p className={styles['summary']}>
-            에반게리온 / 나혼렙 / 팬스가 / 엣지러너 / 헬다이버즈 ...
+            {'... ' + ipData.map(ip => ip.title).join(' / ') + ' ...'}
           </p>
           <div className={styles['sns-frame']}>
-            <a className={styles['url'] + ' ' + styles['instagram']} href="https://www.instagram.com/unit_1m/" target="_blank" rel="noopener noreferrer">
-              INSTAGRAM
-            </a>
-            <a className={styles['url'] + ' ' + styles['instagram']} href="https://www.x.com/unit_1m/" target="_blank" rel="noopener noreferrer">
-              X
-            </a>
+
+            {
+              DBController.instance.getSocialData()
+                .map((social, index) => (
+                  <a
+                    key={index}
+                    className={styles['url'] + ' ' + styles['social']}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={social.icon}
+                      alt={social.name}
+                      width="32px"
+                      style={{
+                        filter: 'invert(1)',
+                        opacity: 0.75,
+                      }}
+                    />
+                  </a>
+                ))
+            }
           </div>
         </div>
 
         <hr className="hr-default" />
+
+        <h2>MEMBERS</h2>
 
         <div className={styles['members']}>
           {memberData.map((member, i) => (
@@ -133,10 +161,11 @@ function App() {
           ))}
         </div>
 
-        <hr className="hr-default" />
       </div>
 
-      <h2>Upcoming Events</h2>
+      <hr className="hr-default" />
+
+      <h2>EVENTS</h2>
 
       <div className={styles['event-board']}>
         {
@@ -161,7 +190,9 @@ function App() {
         }
       </div>
 
-      <h2>작품</h2>
+      <hr className="hr-default" />
+
+      <h2>WORKS</h2>
       <div className={styles['goods-board']}>
         <Masonry
           breakpointCols={{ default: 4, 800: 3 }}
@@ -169,7 +200,7 @@ function App() {
           columnClassName={styles['my-masonry-grid_column']}
         >
           {
-            GOODS_DATA
+            DBController.instance.getGoodsData()
               .map((goods, index) => (
                 <GoodsCard
                   key={index}

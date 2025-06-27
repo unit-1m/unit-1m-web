@@ -28,6 +28,7 @@
 .hr-default {
   border: 0;
   height: 2px;
+  width: 100%;
   background-image: linear-gradient(to right, #3330, #333, #3330);
   margin: 1em 0;
 }

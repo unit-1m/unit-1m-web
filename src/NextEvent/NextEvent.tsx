@@ -31,7 +31,9 @@ export function NextEvent(props: { label: string, dateStart: Date, dateEnd: Date
         <span className={styles['d-day']}>
           {getDDay(props.dateStart) >= 0 ? `D-${getDDay(props.dateStart)}` : 'D-Day'}
         </span>
-        {dateElement}
+        <div className={styles['specific']}>
+          {dateElement}
+        </div>
       </div>
       <div className={styles['url']}>
         <a className="url" href={props.url} target="_blank" rel="noopener noreferrer">

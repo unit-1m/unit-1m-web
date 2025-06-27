@@ -1,68 +1,68 @@
 .body {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 
-	background-color: #00000033;
+	grid-template:
+		"logo title" auto
+		"logo date" auto
+		"logo url" auto
+		/ auto 1fr;
+
+	background-color: hsl(0, 0%, 10%);
 	padding: 1rem;
 	border-radius: 1rem;
 }
 
+.logo {
+	grid-area: logo;
+
+	display: flex;
+	place-self: center;
+	height: 75%;
+	display: block;
+	margin: 0 auto;
+	margin-right: 1rem;
+	background-color: #fff;
+	border-radius: 100%;
+	padding: .25rem;
+
+}
+
 .label {
+	grid-area: title;
+
 	font-size: 1.5rem;
-	margin-top: .55rem;
-	margin-bottom: .25rem;
+	text-align: left;
 }
 
 .date {
-	display: grid;
-	grid-template-columns: 4fr 1fr 4fr;
-	grid-template-rows: 1fr 1fr;
+	grid-area: date;
 
-	.d-day {
-		grid-column: 1 / span 3;
-		grid-row: 1;
-	}
+	display: flex;
+	gap: 1rem;
 
-	.date-start {
-		opacity: .5;
-		grid-column: 1;
-		grid-row: 2;
-	}
 
-	.date-separator {
-		opacity: .5;
-		grid-column: 2;
-		grid-row: 2;
-	}
+	.d-day {}
 
-	.date-end {
-		opacity: .5;
-		grid-column: 3;
-		grid-row: 2;
-	}
+	.specific {
+		.date-start {
+			opacity: .5;
+		}
 
-	.date-single {
-		opacity: .5;
-		grid-column: 1 / span 3;
-		grid-row: 2;
+		.date-separator {
+			opacity: .5;
+		}
+
+		.date-end {
+			opacity: .5;
+		}
+
+		.date-single {
+			opacity: .5;
+		}
 	}
 }
 
 .url {
-	margin-top: 1rem;
-	border: 1px solid var(--color-link);
-	place-self: center;
-	border-radius: .25rem;
-	padding: .25rem 1rem;
-}
-
-.logo {
-	display: flex;
-	justify-content: center;
-	height: 5rem;
-	display: block;
-	margin: 0 auto;
-	background-color: #fff;
-	border-radius: 100%;
-	padding: .5rem;
+	grid-area: url;
+	place-self: flex-end;
 }
