@@ -5,7 +5,7 @@
 
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: hsla(0, 0%, 5%);
+  background-color: hsla(0, 0%, 7.5%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --color-link: #ffaa64;
+
+  --title-font: consolas, "Courier New", monospace;
 }
 
 a {

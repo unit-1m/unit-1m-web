@@ -1,6 +1,6 @@
 import './App.css'
 import { MemberCard } from './MemberCard/MemberCard'
-import { CircleTitle } from './CircleTitle'
+import { CircleTitle } from './CircleTitle/CircleTitle'
 import { useCallback, useEffect, useState } from 'react'
 import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 
@@ -114,9 +114,6 @@ function App() {
       <div className={styles['header']}>
         <div className={styles['title-card']}>
           <CircleTitle />
-          <p className={styles['summary']}>
-            {'... ' + ipData.map(ip => ip.title).join(' / ') + ' ...'}
-          </p>
           <div className={styles['sns-frame']}>
 
             {
@@ -142,6 +139,11 @@ function App() {
                 ))
             }
           </div>
+
+          <p className={styles['summary']}>
+            {'... ' + ipData.map(ip => ip.title).join(' / ') + ' ...'}
+          </p>
+
         </div>
 
         <hr className="hr-default" />

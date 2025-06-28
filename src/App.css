@@ -4,13 +4,6 @@
   text-align: center;
 }
 
-.circle-title {
-  margin: 0 0 0.25em 0;
-}
-
-
-.logo:hover {}
-
 @keyframes appear {
   from {
     opacity: 0.001;
@@ -27,10 +20,9 @@
 
 .hr-default {
   border: 0;
-  height: 2px;
-  width: 100%;
-  background-image: linear-gradient(to right, #3330, #333, #3330);
-  margin: 1em 0;
+  width: 25%;
+  height: 1px;
+  background-image: repeating-linear-gradient(to right, white 0, white 2px, transparent 2px, transparent 32px);
 }
 
 .blur-filtered {

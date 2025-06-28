@@ -12,7 +12,7 @@
 	font-size: 2em;
 	display: flex;
 	flex-direction: column;
-
+	margin-bottom: 5rem;
 }
 
 .summary {
@@ -26,6 +26,7 @@
 	justify-content: center;
 	gap: 1em;
 	flex-wrap: wrap;
+	margin-bottom: 5rem;
 }
 
 .member-specifics {
@@ -106,9 +107,9 @@
 	justify-content: center;
 	align-items: top;
 	gap: 1em;
-	margin: 0em 1em;
 
 	transition: gap 0.2s ease-in-out;
+	margin-bottom: 5rem;
 }
 
 .sns-frame {
@@ -127,4 +128,8 @@
 	background: #00000066;
 	border-radius: 1rem;
 	padding: .2em 1em;
+}
+
+h2 {
+	font-family: var(--title-font);
 }

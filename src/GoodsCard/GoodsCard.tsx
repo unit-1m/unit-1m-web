@@ -13,7 +13,7 @@ export function GoodsCard(props: { data: GoodsData }) {
 
           return (
             <div key={index} className={styles['author']}>
-              <span>
+              <span className={styles['name']}>
                 {'by ' + author}
               </span>
               <MemberIconCircle logo={imgPath ?? ''} styles={{ height: '1.5em' }} />
@@ -21,6 +21,7 @@ export function GoodsCard(props: { data: GoodsData }) {
           )
         })}
       </div>
+      <span className={styles['id']}>{props.data.id}</span>
       <span className={styles['label']}>{props.data.label}</span>
     </div>
   )

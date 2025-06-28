@@ -1,23 +1,30 @@
 .goods-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: #ffffff44;
+	display: grid;
 	padding: .5em;
 	width: min(20vw, 20em);
-	border-radius: .25em;
+	border: 1px solid hsla(0, 0%, 100%, 0.2);
 	box-shadow: 0 8px 1em #00000044;
 
-	// transition: width 0.2s ease-in-out,
-	// 	padding 0.2s ease-in-out, ;
+	grid: "img img" 1fr "author label" auto / auto 1fr;
 
 	.img {
+		grid-area: img;
+		object-fit: cover;
+
 		width: 100%;
 		height: auto;
-		border-radius: 0.25em;
+	}
+
+	.id {
+		grid-area: label;
+		font-family: 'Consolas', Courier, monospace;
+		place-self: center;
+		padding-top: .4rem;
+		opacity: .75;
 	}
 
 	.label {
+		display: none;
 		font-style: italic;
 		font-size: .75em;
 		opacity: .5;
@@ -25,12 +32,18 @@
 	}
 
 	.author-container {
-		padding: 0.5em;
+		grid-area: author;
+
+		padding-top: 0.25em;
 
 		.author {
 			display: flex;
 			place-items: center;
 			gap: 0.5em;
+
+			.name {
+				display: none;
+			}
 
 			span {
 				font-size: .75em;
