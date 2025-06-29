@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2023"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    // "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "sourceMap": true,
+    "noEmit": false,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@alice-toolkit/*": [
+        "./node_modules/alice-toolkit/src/*"
+      ]
+    },
+    "outDir": "dist/supabase",
+  },
+  "files": [
+    "src/supabase/index.ts"
+  ],
+  "tsc-alias": {
+    "verbose": true,
+    "resolveFullPaths": true,
+    "fileExtensions": {
+      "inputGlob": "{js,jsx,mjs}",
+      "outputCheck": [
+        "js",
+        "json",
+        "jsx",
+        "mjs"
+      ]
+    }
+  }
+}

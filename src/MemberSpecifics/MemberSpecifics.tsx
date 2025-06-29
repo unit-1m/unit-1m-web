@@ -7,17 +7,21 @@ import { EventSegment } from './EventSegment/EventSegment'
 import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
 import { DBController } from '../database/DBController'
 
-export function MemberSpecifics(props: { data: MemberData }) {
-  const [className, setClassName] = useState(styles['body'] + ' fx-appear')
+export function MemberSpecifics(props: { data?: MemberData }) {
+  const [className, setClassName] = useState(styles['body'])
 
-  const imgPath = DBController.instance.getMemberData().find(member => member.name === props.data.name)?.logo
+  const imgPath = DBController.instance.getMemberData().find(member => member.name === props.data?.name)?.logo
 
   useEffect(() => {
     setClassName(styles['body'])
-    setTimeout(() => {
-      setClassName(styles['body'] + ' fx-appear')
-    }, 10)
+    requestAnimationFrame(() => {
+      setClassName(styles['body'] + ' fx-appear-up' + ' fx-appear')
+    })
   }, [props.data])
+
+  if (!props.data) {
+    return <></>
+  }
 
   return (
     <div className={className}>
@@ -30,8 +34,8 @@ export function MemberSpecifics(props: { data: MemberData }) {
       <hr />
 
       <div className={styles['specific-data']}>
-        {props.data.stats?.map((stat) => {
-          return <MemberSpecificsSegment member={stat} />
+        {props.data.stats?.map((stat, i) => {
+          return <MemberSpecificsSegment key={i} member={stat} />
         })}
       </div>
 
@@ -43,14 +47,14 @@ export function MemberSpecifics(props: { data: MemberData }) {
         </p>
       </div>
       <div className={styles['events-data']}>
-        {props.data.events?.map((event) => {
+        {props.data.events?.map((event, i) => {
           const data = EVENT_DATA.find(e => e.name === event)
 
           if (data === undefined) {
             return <></>
           }
 
-          return <EventSegment data={data} />
+          return <EventSegment key={i} data={data} />
         })}
       </div>
     </div>

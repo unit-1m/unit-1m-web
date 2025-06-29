@@ -70,3 +70,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+@keyframes opacity-up {
+  from {
+    opacity: 0.001;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-up {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fx-appear {
+  animation: opacity-up .25s;
+}
+
+.fx-appear-up {
+  animation: appear-up .25s cubic-bezier(0, 1.16, 0, 1);
+}

@@ -4,20 +4,6 @@
   text-align: center;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0.001;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fx-appear {
-  animation: appear .25s;
-}
-
 .hr-default {
   border: 0;
   width: 25%;

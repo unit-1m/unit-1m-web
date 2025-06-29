@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npm-build-supabase",
+			"type": "npm",
+			"script": "build-supabase",
+			"isBackground": false,
+			"problemMatcher": {
+				"owner": "npm",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*",
+					"endsPattern": "Finished.+"
+				},
+				"pattern": {
+					"regexp": "",
+				}
+			}
+		},
+	]
+}

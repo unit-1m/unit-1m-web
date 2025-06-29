@@ -7,8 +7,6 @@ import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
 import styles from './App.module.scss'
 import { GoodsCard } from './GoodsCard/GoodsCard'
 import Masonry from 'react-masonry-css'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import { NextEvent } from './NextEvent/NextEvent'
 import { MemberData } from './database/MemberData'
 import { EVENT_DATA } from './database/EVENT_DATA'
@@ -20,8 +18,6 @@ function App() {
   const [memberData, setMemberData] = useState<MemberData[]>([])
 
   const [ipData, setIpData] = useState<IpData[]>([])
-
-  const MySwal = withReactContent(Swal)
 
   const onMemberCardClick = useCallback((name: string) => {
     if (selectedMember === name) {
@@ -92,22 +88,7 @@ function App() {
     if (data === undefined) {
       return
     }
-
-    MySwal.fire({
-      title: <MemberSpecifics data={data} />,
-      showConfirmButton: false,
-      background: 'transparent',
-      backdrop: '#00000033',
-      customClass: {
-        container: 'blur-filtered',
-      },
-
-      didOpen: () => {
-        // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-        // MySwal.showLoading()
-      },
-    })
-  }, [MySwal, selectedMember])
+  }, [selectedMember])
 
   return (
     <>
@@ -214,6 +195,25 @@ function App() {
             and more...
           </div>
         </Masonry>
+      </div>
+
+      <div
+        style={{
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '100%',
+          display: selectedMember ? 'flex' : 'none',
+          placeContent: 'center',
+          placeItems: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        }}
+        onClick={() => setSelectedMember(null)}
+      >
+        <MemberSpecifics
+          data={memberData.find(member => member.name === selectedMember) ?? memberData[0]}
+        />
       </div>
     </>
   )

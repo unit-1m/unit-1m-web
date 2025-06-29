@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-supabase": "tsc -p tsconfig.supabase.json && tsc-alias -p tsconfig.supabase.json"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^4.2.0",
@@ -16,8 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-masonry-css": "^1.0.16",
-    "sweetalert2": "^11.17.2",
-    "sweetalert2-react-content": "^5.1.0"
+    "yuna_sync": "file:../yuna_sync"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -29,6 +29,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "sass-embedded": "^1.86.0",
+    "tsc-alias": "^1.8.16",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
