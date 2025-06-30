@@ -1,11 +1,12 @@
+import { SupabaseAuth } from 'yuna_sync'
 import { IP_DATA } from '../database/IP_DATA'
 import { supabaseClient } from './supabaseClient'
 
 async function main() {
-  await supabaseClient.auth.signInWithPassword({
-    email: process.env.SUPABASE_ADMIN_EMAIL!,
-    password: process.env.SUPABASE_ADMIN_PASSWORD!,
-  })
+  await SupabaseAuth.withPassword(supabaseClient,
+    process.env.SUPABASE_ADMIN_EMAIL!,
+    process.env.SUPABASE_ADMIN_PASSWORD!,
+  )
 
   await updateFranchise()
 
@@ -22,10 +23,11 @@ async function updateFranchise() {
     .select()
     .eq('type', 'franchise')).data ?? []
 
-  const upsertData: Record<string, string>[] = localData.map(f => ({
-    type: 'franchise',
-    label: f.title,
-  }))
+  const upsertData: Record<string, string>[] = localData
+    .map(f => ({
+      type: 'franchise',
+      label: f.title,
+    }))
 
   upsertData
     .forEach((f) => {

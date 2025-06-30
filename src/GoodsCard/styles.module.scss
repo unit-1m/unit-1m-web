@@ -1,9 +1,9 @@
 .goods-card {
+	place-self: center;
 	display: grid;
-	padding: .5em;
-	width: min(20vw, 20em);
 	border: 1px solid hsla(0, 0%, 100%, 0.2);
 	box-shadow: 0 8px 1em #00000044;
+	padding-bottom: .5rem;
 
 	grid: "img img" 1fr "author label" auto / auto 1fr;
 
@@ -34,7 +34,8 @@
 	.author-container {
 		grid-area: author;
 
-		padding-top: 0.25em;
+		padding-top: 0.5em;
+		padding-left: 0.5em;
 
 		.author {
 			display: flex;

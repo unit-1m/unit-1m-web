@@ -1,17 +1,17 @@
 import './App.css'
-import { MemberCard } from './MemberCard/MemberCard'
-import { CircleTitle } from './CircleTitle/CircleTitle'
+import { MemberCard } from '../MemberCard/MemberCard'
+import { CircleTitle } from '../CircleTitle/CircleTitle'
 import { useCallback, useEffect, useState } from 'react'
-import { MemberSpecifics } from './MemberSpecifics/MemberSpecifics'
+import { MemberSpecifics } from '../MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
-import { GoodsCard } from './GoodsCard/GoodsCard'
+import { GoodsCard } from '../GoodsCard/GoodsCard'
 import Masonry from 'react-masonry-css'
-import { NextEvent } from './NextEvent/NextEvent'
-import { MemberData } from './database/MemberData'
-import { EVENT_DATA } from './database/EVENT_DATA'
-import { DBController } from './database/DBController'
-import { IpData } from './database/IpData'
+import { NextEvent } from '../NextEvent/NextEvent'
+import { MemberData } from '../database/MemberData'
+import { EVENT_DATA } from '../database/EVENT_DATA'
+import { DBController } from '../database/DBController'
+import { IpData } from '../database/IpData'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<string | null>(null)
@@ -27,7 +27,6 @@ function App() {
     setSelectedMember(name)
   }, [selectedMember])
 
-  // const gotsupabase = useRef<boolean>(false)
   useEffect(() => {
     const newMemberData = DBController.instance.getMemberData()
       .sort(() => Math.random() - 0.5)
@@ -38,47 +37,6 @@ function App() {
       .sort(() => Math.random() - 0.5)
 
     setIpData(newIpData)
-
-    // if (gotsupabase.current) {
-    //   return
-    // }
-    // gotsupabase.current = true
-
-    // const fn = async () => {
-    //   const members = await supabase.from('u1m-members').select('*')
-
-    //   const asData: MemberData[] = members.data?.map((raw) => {
-    //     return {
-    //       name: raw['nickname'],
-    //       mbti: raw['mbti'],
-    //       logo: raw.logo_img,
-    //       color: raw.color,
-    //       stats: raw.stats ? JSON.parse(raw.stats) : undefined,
-    //       events: raw.events ? JSON.parse(raw.events) : undefined,
-    //     }
-    //   }) ?? []
-
-    //   for (const member of asData) {
-    //     if (!member.logo) {
-    //       member.logo = ''
-    //       continue
-    //     }
-
-    //     const logo = await supabase.storage.from('member-logo').download(member.logo)
-
-    //     if (logo.data)
-    //       member.logo = URL.createObjectURL(logo.data)
-    //     else
-    //       member.logo = ''
-    //   }
-
-    //   return asData
-    // }
-
-    // fn().then((data) => {
-    //   const asRandom = data.sort(() => Math.random() - 0.5)
-    //   setMemberData(asRandom)
-    // })
   }, [])
 
   useEffect(() => {
@@ -178,7 +136,7 @@ function App() {
       <h2>WORKS</h2>
       <div className={styles['goods-board']}>
         <Masonry
-          breakpointCols={{ default: 4, 800: 3 }}
+          breakpointCols={{ default: 4, 800: 2, 500: 1 }}
           className={styles['my-masonry-grid']}
           columnClassName={styles['my-masonry-grid_column']}
         >

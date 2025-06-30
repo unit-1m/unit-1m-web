@@ -35,17 +35,10 @@
 	place-content: center;
 }
 
-// .goods-board {
-// 	display: flex;
-// 	flex-direction: row;
-// 	flex-wrap: wrap;
-// 	justify-content: center;
-// 	align-items: top;
-// 	gap: 1em;
-// 	margin: 0em 1em;
-
-// 	transition: gap 0.2s ease-in-out;
-// }
+.goods-board {
+	justify-content: center;
+	margin: 0em 1em;
+}
 
 .goods-board-more {
 	display: flex;
