@@ -22,7 +22,10 @@
     "paths": {
       "@alice-toolkit/*": [
         "../node_modules/alice-toolkit/src/*"
-      ]
+      ],
+      "yuna_sync/*": [
+        "../node_modules/yuna_sync/src/*"
+      ],
     },
   },
   "include": [
