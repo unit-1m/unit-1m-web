@@ -31,7 +31,9 @@ import pnsg_vrt from '/goods/PSG-STK-VRT.jpg'
 
 import eva_rei_eye from '/goods/EVA-REI-EYE.jpg'
 import eva_rei_brd from '/goods/EVA-REI-BRD.jpg'
-import eva_ask_idc from '/goods/EVA-ASK-IDC.jpg'
+
+import eva_ask_idc from '/goods/EVA-ASK-IDC.png'
+import eva_rei_idc from '/goods/EVA-REI-IDC.png'
 
 import eva_kao_vrt from '/goods/EVA-KAO-VRT.jpg'
 
@@ -39,6 +41,12 @@ import HD2_SOL_FLG_A from '/goods/HD2-SOL-FLG-A.jpg'
 import HD2_SOL_FLG_B from '/goods/HD2-SOL-FLG-B.jpg'
 import CPE_LCY_HAG from '/goods/CPE-LCY-HAG.jpg'
 import CPE_RBC_GUN from '/goods/CPE-RBC-GUN.jpg'
+import EVA_ASK_DOT from '/goods/EVA-ASK-DOT.png'
+
+import EVA_ASK_DRK from '/goods/EVA-ASK-DRK.png'
+import EVA_GRP_STK from '/goods/EVA-GRP-STK.png'
+
+import EVA_ASK_SKY from '/goods/EVA-ASK-SKY.png'
 
 // import place_holder from '/goods/goods-img-placeholder.jpg'
 
@@ -236,6 +244,38 @@ export const GOODS_DATA: GoodsData[] = [
     authors: ['Zu0'],
     id: 'EVA-ASK-IDC',
   },
-
+  {
+    path: eva_rei_idc,
+    label: '레이',
+    authors: ['Zu0'],
+    id: 'EVA-REI-IDC',
+  },
   ...thomasGoods,
+
+  {
+    path: EVA_ASK_DOT,
+    label: '아스카',
+    authors: ['Aion'],
+    id: 'EVA-ASK-DOT',
+  },
+
+  {
+    path: EVA_ASK_DRK,
+    label: '아스카',
+    authors: ['WASAK'],
+    id: 'EVA-ASK-DRK',
+  },
+  {
+    path: EVA_GRP_STK,
+    label: '에반게리온 스티커',
+    authors: ['WASAK'],
+    id: 'EVA-GRP-STK',
+  },
+
+  {
+    path: EVA_ASK_SKY,
+    label: '아스카',
+    authors: ['SRPNT'],
+    id: 'EVA-ASK-SKY',
+  },
 ]

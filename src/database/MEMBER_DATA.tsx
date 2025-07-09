@@ -4,6 +4,8 @@ import jihuiLogo from '/member/profile/g-hui.jpg'
 import srpntLogo from '/member/profile/srpnt.png'
 import thomasLogo from '/member/profile/thomas.webp'
 import zu0Logo from '/member/profile/zu0.jpg'
+import aionLogo from '/member/profile/aion.png'
+import wrLogo from '/member/profile/wr.png'
 
 // Define the type for the MEMBER_DATA array
 export const MEMBER_DATA: MemberData[] = [
@@ -26,6 +28,7 @@ export const MEMBER_DATA: MemberData[] = [
       '코믹월드 318 일산',
       '일러스타 페스 7',
       '코믹월드 320 수원',
+      '코믹월드 321 청주',
     ],
   },
   {
@@ -83,6 +86,32 @@ export const MEMBER_DATA: MemberData[] = [
 
     logo: thomasLogo,
     color: 'hsl(143, 20.30%, 25.10%)',
+
+    stats: [
+      { label: '인간', data: '' },
+    ],
+
+    events: [],
+  },
+  {
+    name: 'Aion',
+    mbti: 'ISTP',
+
+    logo: aionLogo,
+    color: 'hsl(0, 0%, 0%)',
+
+    stats: [
+      { label: '인간', data: '' },
+    ],
+
+    events: [],
+  },
+  {
+    name: 'w.r',
+    mbti: 'INFP',
+
+    logo: wrLogo,
+    color: 'hsl(0, 0%, 0%)',
 
     stats: [
       { label: '인간', data: '' },
