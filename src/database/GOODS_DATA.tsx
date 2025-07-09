@@ -5,8 +5,8 @@ import eva_gun_sword from '/goods/EVA-ASKREI-GNSW.jpg'
 import eva_asuka_sitting from '/goods/EVA-ASK-SIT.jpg'
 import eva_water from '/goods/EVA-ASK-LAK.png'
 import gh_asuka from '/goods/EVA-ASK-SWM.jpg'
-import gh_badge_asuka from '/goods/EVA-ASK-SQR.jpg'
-import gh_badge_rei from '/goods/EVA-REI-SQR.jpg'
+// import gh_badge_asuka from '/goods/EVA-ASK-SQR.jpg'
+// import gh_badge_rei from '/goods/EVA-REI-SQR.jpg'
 import gh_rei from '/goods/EVA-REI-FLR.jpg'
 
 import eva_asuka_casino from '/goods/EVA-ASK-CSN.jpg'
@@ -47,6 +47,8 @@ import EVA_ASK_DRK from '/goods/EVA-ASK-DRK.png'
 import EVA_GRP_STK from '/goods/EVA-GRP-STK.png'
 
 import EVA_ASK_SKY from '/goods/EVA-ASK-SKY.png'
+import EVA_PLT_BNC from '/goods/EVA-PLT-BNC.png'
+import CPE_LCY_MON from '/goods/CPE-LCY-MON.png'
 
 // import place_holder from '/goods/goods-img-placeholder.jpg'
 
@@ -126,17 +128,23 @@ export const GOODS_DATA: GoodsData[] = [
     authors: ['SRPNT'],
     id: 'EVA-ASK-WAT',
   },
+  // {
+  //   path: gh_badge_asuka,
+  //   label: '아스카 뱃지',
+  //   authors: ['G-HYI'],
+  //   id: 'GH-ASK-BADGE',
+  // },
+  // {
+  //   path: gh_badge_rei,
+  //   label: '레이 뱃지',
+  //   authors: ['G-HYI'],
+  //   id: 'GH-REI-BADGE',
+  // },
   {
-    path: gh_badge_asuka,
-    label: '아스카 뱃지',
+    path: EVA_PLT_BNC,
+    label: '에반게리온',
     authors: ['G-HYI'],
-    id: 'GH-ASK-BADGE',
-  },
-  {
-    path: gh_badge_rei,
-    label: '레이 뱃지',
-    authors: ['G-HYI'],
-    id: 'GH-REI-BADGE',
+    id: 'EVA-PLT-BNC',
   },
   {
     path: eva_asuka_cartoon,
@@ -278,4 +286,12 @@ export const GOODS_DATA: GoodsData[] = [
     authors: ['SRPNT'],
     id: 'EVA-ASK-SKY',
   },
+
+  {
+    path: CPE_LCY_MON,
+    label: '루시',
+    authors: ['Zu0'],
+    id: 'CPE-LCY-MON',
+  },
+
 ]
