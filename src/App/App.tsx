@@ -1,8 +1,7 @@
 import './App.css'
-import { MemberCard } from '../MemberCard/MemberCard'
+import { MemberCard } from '../features/members/components/MemberCard/MemberCard'
 import { CircleTitle } from '../CircleTitle/CircleTitle'
 import { useCallback, useEffect, useState } from 'react'
-import { MemberSpecifics } from '../MemberSpecifics/MemberSpecifics'
 
 import styles from './App.module.scss'
 import { GoodsCard } from '../GoodsCard/GoodsCard'
@@ -12,6 +11,7 @@ import { MemberData } from '../database/MemberData'
 import { EVENT_DATA } from '../database/EVENT_DATA'
 import { DBController } from '../database/DBController'
 import { IpData } from '../database/IpData'
+import { MemberSpecifics } from '../features/members/components/MemberSpecifics/MemberSpecifics'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<string | null>(null)

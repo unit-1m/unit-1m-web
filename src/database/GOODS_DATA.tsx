@@ -46,7 +46,11 @@ import EVA_ASK_DOT from '/goods/EVA-ASK-DOT.png'
 import EVA_ASK_DRK from '/goods/EVA-ASK-DRK.png'
 import EVA_GRP_STK from '/goods/EVA-GRP-STK.png'
 
+import EVA_ASK_SNG from '/goods/EVA-ASK-SNG.png'
+import EVA_ASK_SNGTKT from '/goods/EVA-ASK-SNGTKT.png'
 import EVA_ASK_SKY from '/goods/EVA-ASK-SKY.png'
+import EVA_ASK_SKYTKT from '/goods/EVA-ASK-SKYTKT.png'
+
 import EVA_PLT_BNC from '/goods/EVA-PLT-BNC.png'
 import CPE_LCY_MON from '/goods/CPE-LCY-MON.png'
 
@@ -258,6 +262,14 @@ export const GOODS_DATA: GoodsData[] = [
     authors: ['Zu0'],
     id: 'EVA-REI-IDC',
   },
+
+  {
+    path: CPE_LCY_MON,
+    label: '루시',
+    authors: ['Zu0'],
+    id: 'CPE-LCY-MON',
+  },
+
   ...thomasGoods,
 
   {
@@ -288,10 +300,24 @@ export const GOODS_DATA: GoodsData[] = [
   },
 
   {
-    path: CPE_LCY_MON,
-    label: '루시',
+    path: EVA_ASK_SKYTKT,
+    label: '아스카',
+    authors: ['SRPNT'],
+    id: 'EVA-ASK-SKYTKT',
+  },
+
+  {
+    path: EVA_ASK_SNG,
+    label: '아스카',
     authors: ['Zu0'],
-    id: 'CPE-LCY-MON',
+    id: 'EVA-ASK-SNG',
+  },
+
+  {
+    path: EVA_ASK_SNGTKT,
+    label: '아스카',
+    authors: ['Zu0'],
+    id: 'EVA-ASK-SNGTKT',
   },
 
 ]

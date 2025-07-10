@@ -1,6 +1,6 @@
 import { DBController } from '../database/DBController'
 import { GoodsData } from '../database/GoodsData'
-import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
+import { MemberIconCircle } from '../features/members/components/MemberCard/MemberIconCircle'
 import styles from './styles.module.scss'
 
 export function GoodsCard(props: { data: GoodsData }) {

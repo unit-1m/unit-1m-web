@@ -15,7 +15,8 @@ export class DBController {
   }
 
   public getGoodsData(): GoodsData[] {
-    return GOODS_DATA
+    const reversed = [...GOODS_DATA].reverse()
+    return reversed
   }
 
   public getIpData(): IpData[] {

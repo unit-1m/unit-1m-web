@@ -25,10 +25,10 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "@alice-toolkit/*": [
-        "../node_modules/alice-toolkit/src/*"
+        "./node_modules/alice-toolkit/src/*"
       ],
       "yuna_sync/*": [
-        "../node_modules/yuna_sync/src/*"
+        "./node_modules/yuna_sync/src/*"
       ],
     },
   },

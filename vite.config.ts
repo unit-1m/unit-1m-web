@@ -8,4 +8,7 @@ export default defineConfig({
   build: {
     minify: true,
   },
+  resolve: {
+    alias: {},
+  },
 })

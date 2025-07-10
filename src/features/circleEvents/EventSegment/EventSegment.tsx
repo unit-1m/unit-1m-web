@@ -1,4 +1,4 @@
-import { EventData } from '../../database/EventData'
+import { EventData } from '@src/database/EventData'
 import styles from './styles.module.scss'
 
 export function EventSegment(props: { data: EventData }) {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import styles from './MemberSpecifics.module.scss'
 import { MemberSpecificsSegment } from './MemberSpecificsSegment'
-import { MemberData } from '../database/MemberData'
-import { EVENT_DATA } from '../database/EVENT_DATA'
-import { EventSegment } from './EventSegment/EventSegment'
+import { EventSegment } from '../../../circleEvents/EventSegment/EventSegment'
 import { MemberIconCircle } from '../MemberCard/MemberIconCircle'
-import { DBController } from '../database/DBController'
+import { MemberData } from '../../../../database/MemberData'
+import { DBController } from '../../../../database/DBController'
+import { EVENT_DATA } from '../../../../database/EVENT_DATA'
 
 export function MemberSpecifics(props: { data?: MemberData }) {
   const [className, setClassName] = useState(styles['body'])
