@@ -28,4 +28,3 @@ dist-ssr
 *.sw?
 
 __git_ignore_*
-package-lock.json
