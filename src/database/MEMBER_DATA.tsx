@@ -6,6 +6,7 @@ import thomasLogo from '/member/profile/thomas.webp'
 import zu0Logo from '/member/profile/zu0.jpg'
 import aionLogo from '/member/profile/aion.png'
 import wrLogo from '/member/profile/wr.png'
+import maengLogo from '/member/profile/maeng.jpg'
 
 // Define the type for the MEMBER_DATA array
 export const MEMBER_DATA: MemberData[] = [
@@ -56,7 +57,7 @@ export const MEMBER_DATA: MemberData[] = [
 
     mbti: 'INFP',
     stats: [
-      { label: '인간' },
+      // { label: '인간' },
     ],
 
     events: [
@@ -72,7 +73,7 @@ export const MEMBER_DATA: MemberData[] = [
 
     mbti: 'INTP',
     stats: [
-      { label: '인간' },
+      // { label: '인간' },
     ],
 
     events: [
@@ -88,7 +89,7 @@ export const MEMBER_DATA: MemberData[] = [
     color: 'hsl(143, 20.30%, 25.10%)',
 
     stats: [
-      { label: '인간', data: '' },
+      // { label: '인간', data: '' },
     ],
 
     events: [],
@@ -101,7 +102,7 @@ export const MEMBER_DATA: MemberData[] = [
     color: 'hsl(0, 0%, 0%)',
 
     stats: [
-      { label: '인간', data: '' },
+      // { label: '인간', data: '' },
     ],
 
     events: [],
@@ -114,7 +115,19 @@ export const MEMBER_DATA: MemberData[] = [
     color: 'hsl(0, 0%, 0%)',
 
     stats: [
-      { label: '인간', data: '' },
+      // { label: '인간', data: '' },
+    ],
+
+    events: [],
+  },
+  {
+    name: '맹렴',
+    mbti: 'INFP',
+    logo: maengLogo,
+    color: 'hsl(0, 0%, 0%)',
+
+    stats: [
+      { label: '해양의 새싹문어', data: '' },
     ],
 
     events: [],
